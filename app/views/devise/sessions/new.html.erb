@@ -1,26 +1,43 @@
-<h2>Log in</h2>
+<section class="contact container vh-100 d-flex align-items-center justify-content-center">
+  <div class="login-user container-fluid d-flex flex-column justify-content-center rounded-3 bg-white pt-5 pb-5">
+    <h2 class="text text-center mb-4">Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="mb-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email address"  %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <div class="">
+        <%= f.password_field :password, autocomplete: "current-password",  autofocus: true, class: "form-control", placeholder: "Password" %>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <div class="text text-end mb-3 fs-sm-1">
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+        <% end %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="mb-2 fs-sm-1">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end %>
+
+
+      <div class="mb-3">
+        <%= f.submit "Log in", class: 'form-control btn btn-primary' %>
+      </div>
+    <% end %>
+
+    <div class="text fs-sm-1 text text-center mb-4">
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        Need to create an account?
+        <%= link_to "Sign Up", new_registration_path(resource_name) %><br />
+      <% end %>
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+
+    <%# <%= button_to "Sign out", destroy_user_session_path, method: :delete % %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</section>
