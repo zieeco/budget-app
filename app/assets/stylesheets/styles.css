@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('Proxima_Nova_Font.otf');
+}
+
+* {
+  font-family: 'Proxima Nova', serif;
+}
+
 body {
   background-image: linear-gradient(180deg, #225e94, #143562, #2f7fbb);
 }
@@ -14,4 +23,66 @@ body {
   border-top-right-radius: 12%;
   border-bottom-left-radius: 20%;
   border-bottom-right-radius: 31%;
+}
+
+.container-x {
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.contact {
+  background: #f5f6f8;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.d-head {
+  background: #3470b8;
+  color: #fff;
+}
+
+.d-head a {
+  color: #fff;
+}
+
+.mbt-6 {
+  margin-bottom: 4.5rem;
+  margin-top: 4.5rem;
+}
+
+.no-mb {
+  margin-bottom: 0;
+}
+
+.ps-e-12 {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.form-style {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.form-bdy {
+  border-top: 2px solid #ebeaea;
+  padding-top: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.no-bd {
+  border-top: 0;
+}
+
+.log-btn {
+  outline: none;
+  border: none;
+  background: inherit;
+  color: inherit;
 }
