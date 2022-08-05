@@ -1,0 +1,51 @@
+<section class="contact vh-100 d-flex justify-content-center">
+  <div class="login-user d-flex flex-column w-100 pb-5">
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => "form-style bg-white container-fluid"}) do |f| %>
+
+    <div class="d-head d-flex align-items-center justify-content-between pt-3 pb-3 ps-e-12 mb-3">
+      <%= render "/shared/back" %>
+      <h2 class="no-mb">LOGIN</h2>
+
+      <%= f.submit "Log in", class: 'log-btn'%>
+    </div>
+
+
+      <div class="form-bdy">
+
+        <div class="mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control border-top-0 border-end-0 border-start-0", placeholder: "Email address" %>
+        </div>
+
+        <div class="">
+          <%= f.password_field :password, autocomplete: "current-password",  autofocus: true, class: "form-control border-top-0 border-end-0 border-start-0", placeholder: "Password" %>
+        </div>
+
+        <div class="text text-end mb-3 fs-sm-1">
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <%= link_to "Forgot password?", new_password_path(resource_name) %><br />
+          <% end %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="mb-2 fs-sm-1">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="text fs-sm-1 text text-center mb-4">
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            Need to create an account?
+            <%= link_to "Sign Up", new_registration_path(resource_name) %><br />
+          <% end %>
+        </div>
+
+      </div>
+
+    <% end %>
+
+
+    <%# <%= button_to "Sign out", destroy_user_session_path, method: :delete % %>
+  </div>
+</section>
