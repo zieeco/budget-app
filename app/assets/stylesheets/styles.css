@@ -12,13 +12,14 @@
   font-family: 'Proxima Nova', serif;
 }
 
-h1 {
-  font-family: 'Huruf Miranti', sans-serif;
-  font-weight: bold;
-}
-
 body {
   background-image: linear-gradient(180deg, #225e94, #143562, #2f7fbb);
+}
+
+.bs {
+  font-family: 'Huruf Miranti', sans-serif;
+  font-size: 3rem;
+  color: #424b54;
 }
 
 .fs-sm-1 {
