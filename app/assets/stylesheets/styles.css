@@ -3,8 +3,18 @@
   src: url('Proxima_Nova_Font.otf');
 }
 
+@font-face {
+  font-family: 'Huruf Miranti';
+  src: url('huruf_miranti_bold.ttf');
+}
+
 * {
   font-family: 'Proxima Nova', serif;
+}
+
+h1 {
+  font-family: 'Huruf Miranti', sans-serif;
+  font-weight: bold;
 }
 
 body {
@@ -46,13 +56,18 @@ body {
   color: #fff;
 }
 
-.d-head a {
+.d-head a,
+.white-color {
   color: #fff;
 }
 
 .mbt-6 {
   margin-bottom: 4.5rem;
   margin-top: 4.5rem;
+}
+
+.mbt-n6 {
+  margin-bottom: 12rem;
 }
 
 .no-mb {
