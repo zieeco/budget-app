@@ -1,14 +1,63 @@
-<p style="color: green"><%= notice %></p>
+<section class="new-grp bg-home vh-100">
 
-<h1>Groups</h1>
+  <div class="border border-danger">
+    <div class="d-head d-flex align-items-center justify-content-around pt-3 pb-3 ps-e-12 mb-3">
+      <%= render "/shared/back" %>
+      <h2 class="no-mb text-center ">Categories</h2>
+      <%= button_to "Log out", destroy_user_session_path, class: "btn btn-primary", method: :delete %>
+    </div>
 
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-  <% end %>
-</div>
+      <div class="here">
+        <% if @groups.empty? %>
+          <h3 class="text-center">There are no groups yet!</h3>
+        <% else %>
+          <div class=" container-fluid">
+            <div id="groups" class="d-flex flex-column ">
+              <% @groups.each do |group| %>
+                <div class="carrrd ">
+                  <div class="bddy d-flex border  mb-3 py-2 px-2 bg-body shadow-sm rounded">
 
-<%= link_to "New group", new_group_path %>
+                    <%= link_to group, class: 'text-decoration-none d-flex gap-3  w-100  flex-wrap align-items-center' do %>
+                      <div class="img-con ">
+                        <% if group.icon.attached? %>
+                          <img src="<%= (url_for(group.icon))%>" alt="User Avater" class="av" >
+                        <% end %>
+                      </div>
+
+                      <div class="d-flex align-items-center justify-content-evenly fl-1 flex-wrap">
+                        <h3 class="grp-name no-mb mfs-1 fw-bold text-wrap"><%= group.name %></h3>
+                        <p class="no-mb color-amount fw-bold">$<%= group.purchases.sum(:amount)%></p>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+
+  <div class="new-cw fixed-bottom">
+    <%= link_to "New group", new_group_path, class: 'new-control color-white text-center' %>
+  </div>
+</section>
+
+
+
+<%# 
+
+
+<%# < style="color: green"><%= notice %>
+
+<%# <h1>Groups</h1> %>
+
+<%# <div id="groups"> %>
+  <%# <% @groups.each do |group| %>
+    <%# <%= render group %> 
+  
+      <%# <%= link_to "Show this group", group %>
+    <%# </p> %>
+  <%# <% end %> 
+<%# </div> %>
+
