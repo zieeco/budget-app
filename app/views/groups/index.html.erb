@@ -1,13 +1,13 @@
 <section class="new-grp bg-home vh-100">
-
-  <div class="border border-danger">
     <div class="d-head d-flex align-items-center justify-content-around pt-3 pb-3 ps-e-12 mb-3">
       <%= render "/shared/back" %>
       <h2 class="no-mb text-center ">Categories</h2>
       <%= button_to "Log out", destroy_user_session_path, class: "btn btn-primary", method: :delete %>
     </div>
 
-      <div class="here">
+  <div class="mt-5 my-auto">
+
+      <div class="here container container-lg container-sm container-md container-xl container-xxl col-md-8 col-lg-6">
         <% if @groups.empty? %>
           <h3 class="text-center">There are no groups yet!</h3>
         <% else %>
@@ -25,7 +25,7 @@
                       </div>
 
                       <div class="d-flex align-items-center justify-content-evenly fl-1 flex-wrap">
-                        <h3 class="grp-name no-mb mfs-1 fw-bold text-wrap"><%= group.name %></h3>
+                        <h3 class="grp-name no-mb mfs-1 fw-bold text-wrap"><%= group.name.capitalize %></h3>
                         <p class="no-mb color-amount fw-bold">$<%= group.purchases.sum(:amount)%></p>
                       </div>
                     <% end %>

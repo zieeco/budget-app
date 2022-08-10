@@ -1,27 +1,55 @@
-<%= form_with(model: purchase) do |form| %>
-  <% if purchase.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
-
-      <ul>
-        <% purchase.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+<section class="contact vh-100 d-flex flex-column">
+  <div class="d-head d-flex align-items-center justify-content-between pt-3 pb-3 ps-e-12 mb-3 flex-wrap">
+    <%= link_to groups_path do %>
+      <i class="fa-solid fa-arrow-left fa-lg"></i>
+    <% end %>
+    <h2 class="no-mb">TRANSACTION</h2>
+    <span>Next</span>
   </div>
+  
+  <div class="login-user d-flex flex-column pb-5 col-md-8 col-lg-6 container my-auto">
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.number_field :amount %>
-  </div>
+    <%= form_with(model: purchase) do |form| %>
 
-  <div>
-    <%= form.submit %>
+
+      <% if purchase.errors.any? %>
+        <div class="alert alert-warning mx-07">
+          <h2 class="mfs-1"><%= pluralize(purchase.errors.count, "error") %> prohibited this purchase from being saved:</h2>
+
+          <ul class="p-0">
+            <% purchase.errors.each do |error| %>
+              <li class="fa-bounce" style=" --fa-bounce-start-scale-x: 1; --fa-bounce-start-scale-y: 1; --fa-bounce-jump-scale-x: 1; --fa-bounce-jump-scale-y: 1; --fa-bounce-land-scale-x: 1; --fa-bounce-land-scale-y: 1;" > => <strong> <em><%= error.full_message %></em></strong></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-bdy">
+
+        <div>
+          <%= form.number_field :author_id, id: :purchase_author_id, value: current_user.id, type: :hidden %>
+        </div>
+
+
+        <div class="mb-3">
+          <% form.label :name, style: "display: block" %>
+          <%= form.text_field :name, autofocus: true, placeholder: 'Name', class: 'form-control border-top-0 border-end-0 border-start-0' %>
+        </div>
+
+        <div class="mb-3">
+          <% form.label :amount, style: "display: block" %>
+          <%= form.number_field :amount, autofocus: true, placeholder: 'Amount', class: 'form-control border-top-0 border-end-0 border-start-0'  %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :group_id, "Group ID" %>
+          <%= form.collection_select :group_id, current_user.groups, :id, :name, prompt: true %>
+        </div>
+
+        <div>
+          <%= form.submit value: 'Submit', class: 'btn btn-primary' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</section>

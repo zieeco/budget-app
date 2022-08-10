@@ -1,10 +1,55 @@
-<p style="color: green"><%= notice %></p>
+<section class="new-grp bg-home vh-100 justify-content-center">
 
-<%= render @group %>
+  <div class="d-head d-flex align-items-center justify-content-around pt-3 pb-3 ps-e-12 mb-5">
+    <%= link_to groups_path do %>
+      <i class="fa-solid fa-arrow-left fa-lg"></i>
+    <% end %>
+    <h2 class="no-mb text-center "><%= @group.name.capitalize %></h2>
+    <%= button_to "Log out", destroy_user_session_path, class: "btn btn-primary", method: :delete %>
+  </div>
+
+  <div class="mt-5">
+    <div class="text-center my-5">
+      <h3 class="no-mb color-amount fw-bold"> <strong><%= @group.name.capitalize%> $ <%= @group.purchases.sum(:amount)%></strong> </h3>
+    </div>
+
+    <p style="color: green"><%= notice %></p>
+
+    <div class="here container container-lg container-sm container-md container-xl container-xxl col-10 col-md-8 col-lg-6">
+      <% if @purchases.empty? %>
+        <h3 class="text-center no-mb">There are no <strong><%= @group.name.capitalize %>s</strong> available yet!</h3>
+      <% else %>
+          <div class=" container-fluid">
+            <div id="purchases" class="d-flex flex-column ">
+              <% @purchases.each do |purchase| %>
+                <div class="carrrd ">
+                  <div class="bddy d-flex border  mb-3 pyx bg-body shadow-sm rounded">
+                      <div class="d-flex align-items-center justify-content-evenly fl-1 flex-wrap">
+                        <h3 class="grp-name no-mb mfs-1 fw-bold text-wrap"><%= purchase.name.capitalize %></h3>
+                        <p class="no-mb color-amount fw-bold">$<%= purchase.amount%></p>
+                      </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="new-cw fixed-bottom">
+    <%= link_to "New Transaction", new_purchase_path, class: 'new-control color-white text-center' %>
+  </div>
+</section>
+
+
+
+
+<%# 
 
 <div>
   <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
+  <%# <%= link_to "Back to groups", groups_path %> 
 
-  <%= button_to "Destroy this group", @group, method: :delete %>
-</div>
+  <%# <%= button_to "Destroy this group", @group, method: :delete %> 
+<%# </div> %>
