@@ -2,9 +2,7 @@
 
 # Budget App
 
-
 This app is a simple budget app in which a user can add as many items to their list budget, including things to buy and the amount they cost, and it tracks the items that are yet purchased.
-
 
 ## Web presentation
 
@@ -16,7 +14,6 @@ This app is a simple budget app in which a user can add as many items to their l
 | --------- | --------- | --------- | --------- |
 | ![Screenshot5](./images/categrory.png)          |      ![screenshot6](./images/new_category.png)               | ![Screenshot7](./images/transaction.png)                            |      ![Screenshot8](./images/new_transaction.png) |
 
-
 ## Built With
 
 - Ruby
@@ -27,16 +24,19 @@ This app is a simple budget app in which a user can add as many items to their l
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+<details>
+<summary><b>Prerequisites</b></summary>
 
-##### Step 0: Prerequisites
+**Step 0: Prerequisites**
 - A text editor [Vscode](https://code.visualstudio.com/download)
 
-##### Step 1: Downloading and Installing `ruby` and `ruby on rails`
+**Step 1: Downloading and Installing `ruby` and `ruby on rails`**
 
-[MacOs, windows and Linux](https://www.ruby-lang.org/en/downloads/) # download ruby
+- [MacOs, windows and Linux](https://www.ruby-lang.org/en/downloads/) # download ruby
 
-[install ruby on rails](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails)
+- [install ruby on rails](https://guides.rubyonrails.org/getting_started.html#creating-a-new-rails-project-installing-rails)
+
+</details>
 
 <details>
 <summary><b>Clone the repository</b></summary>
@@ -82,7 +82,6 @@ rails s
 
 </details>
 
-
 <details>
 <summary><b>Run test</b></summary>
 
@@ -96,7 +95,6 @@ rspec spec/models/ # test the models
 
 </details>
 
-
 ## Author
 
 👤 **zieeco**
@@ -104,7 +102,6 @@ rspec spec/models/ # test the models
 - GitHub: [@zieeco](https://github.com/zieeco)
 - Twitter [@zieecodes](https://twitter.com/zieecodes)
 - LinkedIn: [Isaac Imaobong Samuel](https://www.linkedin.com/in/isaac-imaobong-samuel)
-
 
 ## 🤝 Contributing
 
@@ -122,7 +119,6 @@ Give a ⭐️ if you like this project!
 
 
 - Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) in accordance to the with the [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/).
-
 
 ## 📝 License
 
