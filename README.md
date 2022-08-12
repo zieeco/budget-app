@@ -118,7 +118,7 @@ Give a ⭐️ if you like this project!
 - Hat tip to [Microverse](https://bit.ly/MicroverseTN) for providing the project requirements and for the distribution of tasks.
 
 
-- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) in accordance to the with the [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/).
+- Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella) in accordance with the [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/).
 
 ## 📝 License
 
