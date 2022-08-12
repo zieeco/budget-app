@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :purchases
-  resources :groups
+  resources :purchases, only: %i[new create]
+  resources :groups, only: %i[index new show create]
   devise_for :users
 
   authenticated :user do
