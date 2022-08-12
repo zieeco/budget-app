@@ -14,11 +14,20 @@ This app is a simple budget app in which a user can add as many items to their l
 | --------- | --------- | --------- | --------- |
 | ![Screenshot5](./images/categrory.png)          |      ![screenshot6](./images/new_category.png)               | ![Screenshot7](./images/transaction.png)                            |      ![Screenshot8](./images/new_transaction.png) |
 
+
+## Live Demo Link
+**_Heroku_**
+- [Live Link](https://shrouded-castle-53270.herokuapp.com/)
+
+**_Video presentation_**
+- [See the live video presentation by me](https://www.loom.com/share/ed0d0cd0c16e4b3f9f3236787e7c7acb)
+
 ## Built With
 
 - Ruby
 - Ruby on Rails
 - Bootstrap
+- CSS3
 
 ## Getting Started
 
