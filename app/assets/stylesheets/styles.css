@@ -13,7 +13,8 @@
 }
 
 body {
-  background-image: linear-gradient(180deg, #225e94, #143562, #2f7fbb);
+  /* background-image: linear-gradient(180deg, #225e94, #143562, #2f7fbb); */
+  background: #f5f6f8;
 }
 
 .bs {
@@ -49,7 +50,7 @@ body {
 }
 
 .contact {
-  background: #f5f6f8;
+  /* background: #f5f6f8; */
   padding-right: 0;
   padding-left: 0;
   margin-right: 0;
@@ -166,3 +167,7 @@ body {
 /* .w-off {
   width: 15rem;
 } */
+
+.pt-cent {
+  padding-top: 16%;
+}
