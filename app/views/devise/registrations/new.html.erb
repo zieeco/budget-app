@@ -1,0 +1,53 @@
+<section class="contact vh-100 d-flex flex-column">
+  <div class="d-head d-flex align-items-center justify-content-between pt-3 pb-3 ps-e-12">
+      <%= render "/shared/back" %>
+      <h2 class="no-mb">REGISTER</h2>
+      <span>Next</span>
+  </div>
+
+  <div class="bg-body">
+    <div class="login-user d-flex flex-column pb-5 col-md-8 col-lg-6 container">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:class => "form-style bg-white container-fluid pt-cent"}) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+
+        <div class="form-bdy">
+          <div class="mb-3">
+            <%= f.text_field :name, autofocus: true, placeholder: 'Full name', class: 'form-control border-top-0 border-end-0 border-start-0' %>
+          </div>
+
+          <div class="mb-3">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email address', class: 'form-control border-top-0 border-end-0 border-start-0' %>
+          </div>
+
+          <div class="mb-3">
+            <% if @minimum_password_length %>
+            <small class="ps-e-12"><em>(<%= @minimum_password_length %> characters minimum)</em></small>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Password', class: 'form-control border-top-0 border-end-0 border-start-0'%>
+          </div>
+
+          <div class="mb-3">
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Confirm password', class: 'form-control border-top-0 border-end-0 border-start-0' %>
+          </div>
+
+
+          <div class="mb-3">
+            <%= f.submit "Create Your Budget Account", class: 'btn btn-primary form-control' %>
+          </div>
+
+          <div class="text-center">
+          Already have an account? <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
