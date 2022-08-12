@@ -19,7 +19,6 @@ RSpec.describe Purchase, type: :model do
       expect(subject).to_not be_valid
     end
 
-
     it 'subject amount should be greater than or equal to 0' do
       subject.amount = -200
       expect(subject).to_not be_valid
