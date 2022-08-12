@@ -18,7 +18,6 @@ RSpec.describe Purchase, type: :model do
       expect(@purchase).to_not be_valid
     end
 
-
     it 'test if amount is a number' do
       @purchase.amount = 200
       expect(@purchase).to be_valid
